@@ -1,0 +1,15 @@
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\bin\Debug\net8.0\AvansMeals.Application.deps.json
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\bin\Debug\net8.0\AvansMeals.Application.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\bin\Debug\net8.0\AvansMeals.Application.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\bin\Debug\net8.0\AvansMeals.Domain.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\bin\Debug\net8.0\AvansMeals.Domain.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.csproj.AssemblyReference.cache
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.AssemblyInfoInputs.cache
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.AssemblyInfo.cs
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.csproj.CoreCompileInputs.cache
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMea.1816E3CE.Up2Date
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\refint\AvansMeals.Application.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\ref\AvansMeals.Application.dll

@@ -1,0 +1,17 @@
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Infrastructure.deps.json
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Infrastructure.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Infrastructure.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Application.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Domain.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Domain.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Application.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.AssemblyInfo.cs
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMea.C0D76D31.Up2Date
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\refint\AvansMeals.Infrastructure.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\ref\AvansMeals.Infrastructure.dll
