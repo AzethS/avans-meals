@@ -9,3 +9,4 @@ C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Domain
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Domain\obj\Debug\net8.0\refint\AvansMeals.Domain.dll
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Domain\obj\Debug\net8.0\AvansMeals.Domain.pdb
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Domain\obj\Debug\net8.0\ref\AvansMeals.Domain.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Domain\obj\Debug\net8.0\AvansMeals.Domain.sourcelink.json

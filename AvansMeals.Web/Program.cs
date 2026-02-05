@@ -20,7 +20,9 @@ builder.Services.AddRazorPages();
 
 // DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        x => x.MigrationsAssembly("AvansMeals.Infrastructure")));
 
 builder.Services
     .AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -48,13 +50,10 @@ using (var scope = app.Services.CreateScope())
     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-    // Seed data
+    context.Database.Migrate();
+
     DataSeeder.Seed(context);
-
-    // Seed roles
     await IdentitySeeder.SeedRolesAsync(roleManager);
-
-    // Seed employee + koppel aan bestaande kantine
 
     var bredaLaId = context.Canteens.First(c => c.City == City.Breda && c.LocationCode == "LA").Id;
     var bredaLdId = context.Canteens.First(c => c.City == City.Breda && c.LocationCode == "LD").Id;
@@ -63,7 +62,6 @@ using (var scope = app.Services.CreateScope())
     await IdentitySeeder.SeedCanteenEmployeeAsync(userManager, roleManager, "canteen.la@avans.nl", "Avans123!", bredaLaId);
     await IdentitySeeder.SeedCanteenEmployeeAsync(userManager, roleManager, "canteen.ld@avans.nl", "Avans123!", bredaLdId);
     await IdentitySeeder.SeedCanteenEmployeeAsync(userManager, roleManager, "canteen.tb@avans.nl", "Avans123!", tilburgTbId);
-
 }
 
 

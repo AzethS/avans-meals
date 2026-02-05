@@ -41,7 +41,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<PackageReservationService>();
 
 // JWT config
-var jwtKey = builder.Configuration["Jwt:Key"] ?? "DEV_ONLY_CHANGE_ME_32CHARS_MIN_123456";
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "DITISEEN_SUPER_GEHEIME_SLEUTEL_MET_MINSTENS_32_TEKENS_123";
 var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "AvansMeals";
 var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "AvansMeals";
 

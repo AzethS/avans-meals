@@ -262,3 +262,4 @@ C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Web\ob
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Web\obj\Debug\net8.0\AvansMeals.Web.pdb
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Web\obj\Debug\net8.0\AvansMeals.Web.genruntimeconfig.cache
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Web\obj\Debug\net8.0\ref\AvansMeals.Web.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Web\obj\Debug\net8.0\AvansMeals.Web.sourcelink.json

@@ -13,3 +13,4 @@ C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Applic
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\refint\AvansMeals.Application.dll
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.pdb
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\ref\AvansMeals.Application.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Application\obj\Debug\net8.0\AvansMeals.Application.sourcelink.json
