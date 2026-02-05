@@ -1,0 +1,67 @@
+﻿@model AvansMeals.Web.ViewModels.ManagePackageProductsViewModel
+
+@{
+    ViewData["Title"] = "Producten beheren";
+}
+
+<h1 class="mb-3">Producten beheren</h1>
+<p class="text-muted">Package: <strong>@Model.PackageName</strong> (ID: @Model.PackageId)</p>
+
+<a class="btn btn-outline-primary mb-3"
+   asp-action="CreateProduct"
+   asp-route-packageId="@Model.PackageId">
+    + Nieuw product
+</a>
+
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Product toevoegen</h5>
+
+        <form asp-action="AddProduct" method="post" class="row g-2">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="packageId" value="@Model.PackageId" />
+
+            <div class="col-md-8">
+                <select name="productId" class="form-select" asp-items="Model.AllProducts"></select>
+            </div>
+
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Toevoegen</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<h4>Huidige producten</h4>
+
+@if (Model.CurrentProducts == null || !Model.CurrentProducts.Any())
+{
+    <p class="text-muted">Dit package heeft nog geen producten.</p>
+}
+else
+{
+    <ul class="list-group mb-4">
+        @foreach (var p in Model.CurrentProducts)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>@p.Name</strong>
+                    @if (p.ContainsAlcohol)
+                    {
+                        <span class="badge bg-warning text-dark ms-2">Alcohol</span>
+                    }
+                </div>
+
+                <form asp-action="RemoveProduct" method="post" class="m-0">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="packageId" value="@Model.PackageId" />
+                    <input type="hidden" name="productId" value="@p.Id" />
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Verwijder</button>
+                </form>
+            </li>
+        }
+    </ul>
+}
+
+<a asp-action="Packages" class="btn btn-secondary">Terug naar beheer</a>

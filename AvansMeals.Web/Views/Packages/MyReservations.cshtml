@@ -1,0 +1,59 @@
+﻿@model IEnumerable<AvansMeals.Web.ViewModels.PackageViewModel>
+
+@{
+    ViewData["Title"] = "Mijn reserveringen";
+}
+
+<h1 class="mb-4">Mijn reserveringen</h1>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}
+
+@if (!Model.Any())
+{
+    <p>Je hebt nog geen reserveringen.</p>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Naam</th>
+                <th>Stad</th>
+                <th>Type</th>
+                <th>Prijs</th>
+                <th>18+</th>
+                <th>Actie</th>
+                <th>Ophalen van</th>
+                <th>Ophalen tot</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.City</td>
+                    <td>@p.MealType</td>
+                    <td>€ @p.Price.ToString("0.00")</td>
+                    <td>@(p.Is18Plus ? "Ja" : "Nee")</td>
+                    <td>
+                        <form asp-action="Cancel" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@p.Id" />
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                Annuleer
+                            </button>
+                        </form>
+                    </td>
+                    <td>@p.PickupFrom.ToString("dd-MM HH:mm")</td>
+                    <td>@p.PickupUntil.ToString("dd-MM HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

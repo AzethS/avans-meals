@@ -1,0 +1,35 @@
+﻿@model AvansMeals.Web.ViewModels.ProductCreateViewModel
+
+@{
+    ViewData["Title"] = "Nieuw product";
+    var packageId = (int)ViewBag.PackageId;
+}
+
+<h1 class="mb-4">Nieuw product</h1>
+
+<form asp-action="CreateProduct" method="post" class="row g-3">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="packageId" value="@packageId" />
+
+    <div class="col-md-6">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6 d-flex align-items-end">
+        <div class="form-check">
+            <input asp-for="ContainsAlcohol" class="form-check-input" />
+            <label asp-for="ContainsAlcohol" class="form-check-label"></label>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Opslaan</button>
+        <a asp-action="ManageProducts" asp-route-packageId="@packageId" class="btn btn-secondary">Terug</a>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.0" />
+    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.9.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.12" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.23" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.15.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.22" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 

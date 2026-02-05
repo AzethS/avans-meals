@@ -1,4 +1,5 @@
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Infrastructure.deps.json
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Infrastructure.runtimeconfig.json
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Infrastructure.dll
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Infrastructure.pdb
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\bin\Debug\net8.0\AvansMeals.Application.dll
@@ -14,4 +15,5 @@ C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infras
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.dll
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\refint\AvansMeals.Infrastructure.dll
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.pdb
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\AvansMeals.Infrastructure.genruntimeconfig.cache
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Infrastructure\obj\Debug\net8.0\ref\AvansMeals.Infrastructure.dll

@@ -1,0 +1,28 @@
+﻿@model AvansMeals.Domain.Entities.Package
+
+@{
+    ViewData["Title"] = "Verwijderen";
+}
+
+<h1 class="mb-4 text-danger">Package verwijderen</h1>
+
+<div class="alert alert-warning">
+    Weet je zeker dat je dit package wilt verwijderen?
+</div>
+
+<table class="table">
+    <tr><th>Naam</th><td>@Model.Name</td></tr>
+    <tr><th>Stad</th><td>@Model.City</td></tr>
+    <tr><th>Type</th><td>@Model.MealType</td></tr>
+    <tr><th>Prijs</th><td>€ @Model.Price.ToString("0.00")</td></tr>
+    <tr><th>Ophalen van</th><td>@Model.PickupFrom</td></tr>
+    <tr><th>Ophalen tot</th><td>@Model.PickupUntil</td></tr>
+</table>
+
+<form asp-action="DeleteConfirmed" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <button type="submit" class="btn btn-danger">Ja, verwijderen</button>
+    <a asp-action="Packages" class="btn btn-secondary">Annuleren</a>
+</form>

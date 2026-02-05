@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvansMeals.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+369400f01d70fac11d3c96fd09ce4ae4920d9685")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvansMeals.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvansMeals.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
