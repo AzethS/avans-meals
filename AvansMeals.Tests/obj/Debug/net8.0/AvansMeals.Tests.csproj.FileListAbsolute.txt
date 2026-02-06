@@ -108,3 +108,4 @@ C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Tests\
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Tests\obj\Debug\net8.0\AvansMeals.Tests.pdb
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Tests\obj\Debug\net8.0\AvansMeals.Tests.genruntimeconfig.cache
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Tests\obj\Debug\net8.0\ref\AvansMeals.Tests.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Tests\obj\Debug\net8.0\AvansMeals.Tests.sourcelink.json

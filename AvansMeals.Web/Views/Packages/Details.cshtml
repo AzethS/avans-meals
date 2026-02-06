@@ -1,53 +1,112 @@
 ﻿@model AvansMeals.Domain.Entities.Package
 
 @{
-    ViewData["Title"] = "Package details";
+    ViewData["Title"] = "Details";
 }
 
-<h1 class="mb-3">@Model.Name</h1>
+<div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+    <div>
+        <a class="app-back" asp-action="Index">← Terug naar aanbod</a>
+        <h1 class="mb-1">@Model.Name</h1>
+        <div class="text-muted">@Model.City • @Model.MealType</div>
+    </div>
 
-<div class="mb-3">
-    @if (Model.Is18Plus)
-    {
-        <span class="badge bg-danger">18+</span>
-    }
-    else
-    {
-        <span class="badge bg-success">Geschikt voor iedereen</span>
-    }
-</div>
-
-<div class="card mb-4">
-    <div class="card-body">
-        <p class="mb-1"><strong>Stad:</strong> @Model.City</p>
-        <p class="mb-1"><strong>Type:</strong> @Model.MealType</p>
-        <p class="mb-1"><strong>Prijs:</strong> € @Model.Price.ToString("0.00")</p>
-        <p class="mb-1"><strong>Ophalen van:</strong> @Model.PickupFrom.ToString("dd-MM-yyyy HH:mm")</p>
-        <p class="mb-0"><strong>Ophalen tot:</strong> @Model.PickupUntil.ToString("dd-MM-yyyy HH:mm")</p>
+    <div class="d-flex gap-2 flex-wrap">
+        @if (Model.Is18Plus)
+        {
+            <span class="badge bg-danger">18+</span>
+        }
+        else
+        {
+            <span class="badge bg-secondary">Geschikt voor iedereen</span>
+        }
     </div>
 </div>
 
-<h4>Inhoud</h4>
+<div class="row g-3">
+    <div class="col-lg-8">
+        <div class="card p-3 h-100">
+            <h2 class="h5 fw-bold mb-2">Over dit pakket</h2>
+            <p class="text-muted mb-3">
+                Dit pakket is samengesteld door de kantine. Hieronder zie je de belangrijkste info en de inhoud.
+            </p>
 
-@if (Model.PackageProducts == null || !Model.PackageProducts.Any())
-{
-    <p class="text-muted">Er zijn nog geen producten gekoppeld aan dit package.</p>
-}
-else
-{
-    <ul class="list-group mb-4">
-        @foreach (var pp in Model.PackageProducts)
-        {
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span>@pp.Product.Name</span>
+            <div class="app-details-grid">
+                <div class="app-details-item">
+                    <div class="text-muted small">Prijs</div>
+                    <div class="fw-bold">€ @Model.Price.ToString("0.00")</div>
+                </div>
 
-                @if (pp.Product.ContainsAlcohol)
-                {
-                    <span class="badge bg-warning text-dark">Alcohol</span>
-                }
-            </li>
-        }
-    </ul>
-}
+                <div class="app-details-item">
+                    <div class="text-muted small">Ophalen van</div>
+                    <div class="fw-bold">@Model.PickupFrom.ToString("dd-MM-yyyy HH:mm")</div>
+                </div>
 
-<a asp-action="Index" class="btn btn-secondary">Terug naar aanbod</a>
+                <div class="app-details-item">
+                    <div class="text-muted small">Ophalen tot</div>
+                    <div class="fw-bold">@Model.PickupUntil.ToString("dd-MM-yyyy HH:mm")</div>
+                </div>
+
+                <div class="app-details-item">
+                    <div class="text-muted small">18+ status</div>
+                    <div class="fw-bold">@(Model.Is18Plus ? "Ja" : "Nee")</div>
+                </div>
+            </div>
+
+            <hr class="my-3" />
+
+            <div class="d-flex align-items-center justify-content-between mb-2">
+                <h3 class="h6 fw-bold mb-0">Inhoud</h3>
+                <span class="badge bg-secondary">
+                    @(Model.PackageProducts?.Count() ?? 0) producten
+                </span>
+            </div>
+
+            @if (Model.PackageProducts == null || !Model.PackageProducts.Any())
+            {
+                <div class="text-muted">
+                    Er zijn nog geen producten gekoppeld aan dit pakket.
+                </div>
+            }
+            else
+            {
+                <div class="app-productlist">
+                    @foreach (var pp in Model.PackageProducts)
+                    {
+                        <div class="app-productitem">
+                            <div class="d-flex align-items-center justify-content-between gap-2">
+                                <div class="fw-semibold">@pp.Product.Name</div>
+
+                                @if (pp.Product.ContainsAlcohol)
+                                {
+                                    <span class="badge bg-warning text-dark">Alcohol</span>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card p-3">
+            <h2 class="h5 fw-bold mb-2">Acties</h2>
+
+            <div class="d-grid gap-2">
+                @* We houden het simpel: reserveren doe je op Index.
+                Als je later wil: hier ook reserveren (dan moet je CanReserve info meegeven). *@
+                <a class="btn btn-primary btn-lg" asp-action="Index">
+                    Terug naar aanbod
+                </a>
+            </div>
+
+            <div class="app-details-note mt-3">
+                <div class="fw-semibold">Tip</div>
+                <div class="text-muted small">
+                    Wil je dit pakket reserveren? Ga terug naar het aanbod en klik op <strong>Reserveer</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

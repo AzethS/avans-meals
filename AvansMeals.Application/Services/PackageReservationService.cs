@@ -47,6 +47,7 @@ public class PackageReservationService
         return ReservationResult.Ok();
     }
 
+
     public bool TryCancelReservation(int packageId, string studentId, DateTime now)
     {
         var package = _repository.GetById(packageId);

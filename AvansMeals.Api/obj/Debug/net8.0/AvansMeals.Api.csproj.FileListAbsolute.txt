@@ -111,3 +111,4 @@ C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Api\bi
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Api\bin\Debug\net8.0\HotChocolate.Validation.dll
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Api\bin\Debug\net8.0\System.IO.Hashing.dll
 C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Api\bin\Debug\net8.0\Yarp.ReverseProxy.dll
+C:\Users\w11ti\OneDrive\Bureaublad\Avans\Serverside\AvansMeals\AvansMeals.Api\obj\Debug\net8.0\AvansMeals.Api.sourcelink.json

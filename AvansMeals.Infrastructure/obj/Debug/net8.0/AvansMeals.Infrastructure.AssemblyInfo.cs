@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvansMeals.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70263349905b279a4235d991f9f633599e2b6a03")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+466fd8d2e79b7ea5bfbf2cab8deb057e0b3b4e44")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvansMeals.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvansMeals.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

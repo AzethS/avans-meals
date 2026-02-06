@@ -1,8 +1,244 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="app-hero mb-4">
+    <div class="app-hero-bg">
+        <div class="app-hero-inner">
+            <div class="app-hero-left">
+                <span class="badge bg-primary mb-3">Voedselverspilling verminderen</span>
+
+                <h1 class="app-hero-title">AvansMeals</h1>
+
+                <p class="app-hero-subtitle">
+                    Reserveer voedselpakketten die anders weggegooid worden.
+                    Kies een locatie en een maaltijdtype en haal je pakket op het juiste moment op.
+                </p>
+
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <a class="btn btn-primary" asp-controller="Packages" asp-action="Index">
+                        Bekijk aanbod
+                    </a>
+
+                    @if (User?.Identity?.IsAuthenticated ?? false && (User.IsInRole("Student")))
+                    {
+                        <a class="btn btn-outline-primary" asp-controller="Packages" asp-action="MyReservations">
+                            Mijn reserveringen
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-outline-primary" asp-area="Identity" asp-page="/Account/Login">
+                            Inloggen
+                        </a>
+                        <a class="btn btn-accent" asp-area="Identity" asp-page="/Account/Register">
+                            Registreren
+                        </a>
+                    }
+
+                    @if (User.IsInRole("CanteenEmployee") )
+                    {
+                        <a class="btn btn-secondary" asp-controller="Canteen" asp-action="Packages">
+                            Beheer
+                        </a>
+                    }
+                </div>
+
+                <div class="app-hero-meta mt-4">
+                    <div class="app-meta-chip">
+                        <strong>18+</strong>
+                        <span>Automatische check</span>
+                    </div>
+                    <div class="app-meta-chip">
+                        <strong>Ophaaltijd</strong>
+                        <span>Altijd zichtbaar</span>
+                    </div>
+                    <div class="app-meta-chip">
+                        <strong>1 klik</strong>
+                        <span>Reserveren</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-hero-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <strong>Hoe werkt het?</strong>
+                    <span class="badge bg-secondary">3 stappen</span>
+                </div>
+
+                <ol class="mb-3 text-muted">
+                    <li>Bekijk het aanbod per stad en maaltijdtype.</li>
+                    <li>Reserveer een pakket (volgens de reserveringsregels).</li>
+                    <li>Haal je pakket op tijdens het ophaalmoment.</li>
+                </ol>
+
+                <div class="small text-muted">
+                    Tip: je ziet bij elk pakket meteen het afhaalmoment en of het <strong>18+</strong> is.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="app-feature card p-3 h-100">
+            <div class="app-feature-top">
+                <div class="app-icon-bubble app-icon-green">🌱</div>
+                <span class="badge bg-primary">Duurzaam</span>
+            </div>
+            <div class="app-feature-title">Red pakketten</div>
+            <div class="app-feature-text">Minder verspilling, meer impact.</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="app-feature card p-3 h-100">
+            <div class="app-feature-top">
+                <div class="app-icon-bubble app-icon-orange">⚡</div>
+                <span class="badge bg-warning">Snel</span>
+            </div>
+            <div class="app-feature-title">Reserveer in 1 klik</div>
+            <div class="app-feature-text">Duidelijke info per pakket.</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="app-feature card p-3 h-100">
+            <div class="app-feature-top">
+                <div class="app-icon-bubble app-icon-blue">🔒</div>
+                <span class="badge bg-secondary">Veilig</span>
+            </div>
+            <div class="app-feature-title">18+ check</div>
+            <div class="app-feature-text">Automatisch waar nodig.</div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="app-feature card p-3 h-100">
+            <div class="app-feature-top">
+                <div class="app-icon-bubble app-icon-blue">⏰</div>
+                <span class="badge bg-secondary">Duidelijk</span>
+            </div>
+            <div class="app-feature-title">Ophaalmoment</div>
+            <div class="app-feature-text">Altijd direct zichtbaar.</div>
+        </div>
+    </div>
+</section>
+
+
+<section class="app-section mb-4">
+    <div class="app-section-head mb-3">
+        <h2 class="h5 fw-bold mb-1">Regels & informatie</h2>
+        <div class="text-muted">Kort en duidelijk voordat je reserveert.</div>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-lg-7">
+            <div class="app-panel h-100">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <strong>Regels in het kort</strong>
+                    <span class="badge bg-primary">Student</span>
+                </div>
+
+                <ul class="app-checklist">
+                    <li>
+                        <span class="app-check">✓</span>
+                        <div>
+                            <div class="fw-semibold">18+ pakketten</div>
+                            <div class="text-muted small">Alleen zichtbaar/te reserveren voor studenten van 18 jaar of ouder.</div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="app-check">✓</span>
+                        <div>
+                            <div class="fw-semibold">Annuleren</div>
+                            <div class="text-muted small">Kan zolang het ophaalmoment nog niet is begonnen.</div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="app-check">✓</span>
+                        <div>
+                            <div class="fw-semibold">Transparante info</div>
+                            <div class="text-muted small">Je ziet per pakket stad, maaltijdtype, inhoud en ophaalmoment.</div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="app-check">✓</span>
+                        <div>
+                            <div class="fw-semibold">Directe feedback</div>
+                            <div class="text-muted small">Reserveren/annuleren geeft meteen een melding bovenaan.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="app-panel h-100">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <strong>Veelgestelde vragen</strong>
+                    <span class="badge bg-secondary">FAQ</span>
+                </div>
+
+                <div class="app-faq">
+                    <div class="app-faq-item">
+                        <div class="app-faq-q">Waarom zijn sommige pakketten 18+?</div>
+                        <div class="app-faq-a text-muted small">Bijvoorbeeld door alcohol in het pakket.</div>
+                    </div>
+
+                    <div class="app-faq-item">
+                        <div class="app-faq-q">Kan ik altijd annuleren?</div>
+                        <div class="app-faq-a text-muted small">Alleen vóór de start van het ophaalmoment.</div>
+                    </div>
+
+                    <div class="app-faq-item">
+                        <div class="app-faq-q">Waar zie ik mijn reserveringen?</div>
+                        <div class="app-faq-a text-muted small">
+                            Via <em>Mijn reserveringen</em> in het menu (na inloggen).
+                        </div>
+                    </div>
+
+                    <div class="app-faq-item">
+                        <div class="app-faq-q">Wat als er geen pakketten zijn?</div>
+                        <div class="app-faq-a text-muted small">Check later opnieuw: het aanbod wisselt per dag.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="app-cta mb-4">
+    <div class="app-cta-inner">
+        <div class="app-cta-left">
+            <h2 class="app-cta-title">Klaar om een pakket te redden?</h2>
+            <p class="app-cta-text">
+                Bekijk het aanbod en reserveer voordat het op is.
+                Je ziet meteen het ophaalmoment en eventuele 18+ status.
+            </p>
+        </div>
+
+        <div class="app-cta-actions">
+            <a class="btn btn-primary btn-lg" asp-controller="Packages" asp-action="Index">Naar aanbod</a>
+
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                <a class="btn btn-outline-primary btn-lg" asp-controller="Packages" asp-action="MyReservations">
+                    Mijn reserveringen
+                </a>
+            }
+            else
+            {
+                <a class="btn btn-outline-primary btn-lg" asp-area="Identity" asp-page="/Account/Login">
+                    Inloggen
+                </a>
+            }
+        </div>
+    </div>
+</section>
+

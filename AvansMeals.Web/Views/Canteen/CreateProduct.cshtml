@@ -5,28 +5,60 @@
     var packageId = (int)ViewBag.PackageId;
 }
 
-<h1 class="mb-4">Nieuw product</h1>
+<div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+    <div>
+        <a class="app-back" asp-action="ManageProducts" asp-route-packageId="@packageId">← Terug naar producten</a>
+        <h1 class="mb-1">Nieuw product</h1>
+        <div class="text-muted">Maak een product aan en voeg het toe aan dit package.</div>
+    </div>
+</div>
 
-<form asp-action="CreateProduct" method="post" class="row g-3">
+<form asp-action="CreateProduct" method="post">
     @Html.AntiForgeryToken()
     <input type="hidden" name="packageId" value="@packageId" />
 
-    <div class="col-md-6">
-        <label asp-for="Name" class="form-label"></label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
+    <div class="row g-3">
+        <div class="col-lg-7">
+            <div class="card p-3 h-100">
+                <h2 class="h5 fw-bold mb-3">Productinformatie</h2>
 
-    <div class="col-md-6 d-flex align-items-end">
-        <div class="form-check">
-            <input asp-for="ContainsAlcohol" class="form-check-input" />
-            <label asp-for="ContainsAlcohol" class="form-check-label"></label>
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-check app-checkrow">
+                    <input asp-for="ContainsAlcohol" class="form-check-input" />
+                    <label asp-for="ContainsAlcohol" class="form-check-label"></label>
+                </div>
+
+                <div class="app-details-note mt-3">
+                    <div class="fw-semibold">Let op</div>
+                    <div class="text-muted small">
+                        Als een product alcohol bevat, wordt het package automatisch als <strong>18+</strong> gemarkeerd.
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="col-12">
-        <button type="submit" class="btn btn-success">Opslaan</button>
-        <a asp-action="ManageProducts" asp-route-packageId="@packageId" class="btn btn-secondary">Terug</a>
+        <div class="col-lg-5">
+            <div class="card p-3 h-100">
+                <h2 class="h5 fw-bold mb-2">Acties</h2>
+                <div class="text-muted mb-3">
+                    Sla op om het product toe te voegen aan dit package.
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Opslaan</button>
+                    <a asp-action="ManageProducts"
+                       asp-route-packageId="@packageId"
+                       class="btn btn-outline-secondary btn-lg">
+                        Terug
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </form>
 

@@ -1,0 +1,35 @@
+@* Renders TempData alerts consistently across the app *@
+@{
+    var success = TempData["Success"] as string;
+    var error = TempData["Error"] as string;
+    var info = TempData["Info"] as string;
+    var warning = TempData["Warning"] as string;
+}
+
+@if (!string.IsNullOrWhiteSpace(success))
+{
+    <div class="alert alert-success" role="alert">
+        <strong>Gelukt!</strong> @success
+    </div>
+}
+
+@if (!string.IsNullOrWhiteSpace(info))
+{
+    <div class="alert alert-info" role="alert">
+        @info
+    </div>
+}
+
+@if (!string.IsNullOrWhiteSpace(warning))
+{
+    <div class="alert alert-warning" role="alert">
+        <strong>Let op:</strong> @warning
+    </div>
+}
+
+@if (!string.IsNullOrWhiteSpace(error))
+{
+    <div class="alert alert-danger" role="alert">
+        <strong>Fout:</strong> @error
+    </div>
+}

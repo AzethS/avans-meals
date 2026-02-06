@@ -5,47 +5,91 @@
     ViewData["Title"] = "Nieuw package";
 }
 
-<h1 class="mb-4">Nieuw package</h1>
+<div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+    <div>
+        <a class="app-back" asp-action="Packages">← Terug naar beheer</a>
+        <h1 class="mb-1">Nieuw package</h1>
+        <div class="text-muted">Maak een nieuw voedselpakket aan.</div>
+    </div>
+</div>
 
-<form asp-action="Create" method="post" class="row g-3">
+<form asp-action="Create" method="post">
     @Html.AntiForgeryToken()
 
-    <div class="col-md-6">
-        <label asp-for="Name" class="form-label"></label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
+    <div class="row g-3">
+        <!-- BASIS INFO -->
+        <div class="col-lg-8">
+            <div class="card p-3 h-100">
+                <h2 class="h5 fw-bold mb-3">Basisinformatie</h2>
 
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
 
-    <div class="col-md-3">
-        <label asp-for="MealType" class="form-label"></label>
-        <select asp-for="MealType" class="form-select" asp-items="Html.GetEnumSelectList<MealType>()"></select>
-        <span asp-validation-for="MealType" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6">
+                        <label asp-for="MealType" class="form-label"></label>
+                        <select asp-for="MealType"
+                                class="form-select"
+                                asp-items="Html.GetEnumSelectList<MealType>()">
+                        </select>
+                        <span asp-validation-for="MealType" class="text-danger"></span>
+                    </div>
 
-    <div class="col-md-3">
-        <label asp-for="Price" class="form-label"></label>
-        <input asp-for="Price" class="form-control" />
-        <span asp-validation-for="Price" class="text-danger"></span>
-    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Price" class="form-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="col-md-4">
-        <label asp-for="PickupFrom" class="form-label"></label>
-        <input asp-for="PickupFrom" class="form-control" type="datetime-local"
-               value="@Model.PickupFrom.ToString("yyyy-MM-ddTHH:mm")" />
-        <span asp-validation-for="PickupFrom" class="text-danger"></span>
-    </div>
+        <!-- OPHAALMOMENT -->
+        <div class="col-lg-4">
+            <div class="card p-3 h-100">
+                <h2 class="h5 fw-bold mb-3">Ophaalmoment</h2>
 
-    <div class="col-md-4">
-        <label asp-for="PickupUntil" class="form-label"></label>
-        <input asp-for="PickupUntil" class="form-control" type="datetime-local"
-               value="@Model.PickupUntil.ToString("yyyy-MM-ddTHH:mm")" />
-        <span asp-validation-for="PickupUntil" class="text-danger"></span>
-    </div>
+                <div class="mb-3">
+                    <label asp-for="PickupFrom" class="form-label"></label>
+                    <input asp-for="PickupFrom"
+                           class="form-control"
+                           type="datetime-local"
+                           value="@Model.PickupFrom.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="PickupFrom" class="text-danger"></span>
+                </div>
 
-    <div class="col-12">
-        <button type="submit" class="btn btn-success">Opslaan</button>
-        <a asp-action="Packages" class="btn btn-secondary">Annuleren</a>
+                <div>
+                    <label asp-for="PickupUntil" class="form-label"></label>
+                    <input asp-for="PickupUntil"
+                           class="form-control"
+                           type="datetime-local"
+                           value="@Model.PickupUntil.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="PickupUntil" class="text-danger"></span>
+                </div>
+
+                <div class="app-details-note mt-3">
+                    <div class="fw-semibold">Let op</div>
+                    <div class="text-muted small">
+                        Het ophaalmoment mag maximaal 2 dagen in de toekomst liggen.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACTIES -->
+        <div class="col-12">
+            <div class="d-flex flex-wrap gap-2">
+                <button type="submit" class="btn btn-primary">
+                    Opslaan
+                </button>
+                <a asp-action="Packages" class="btn btn-outline-secondary">
+                    Annuleren
+                </a>
+            </div>
+        </div>
     </div>
 </form>
 

@@ -90,21 +90,21 @@ public static class DataSeeder
                 now.AddHours(10), now.AddHours(12), products[3], products[1]),
 
             MakePackage(bredaLa, "Warm meal deal", MealType.WarmMeal, 5.50m,
-                now.AddHours(16), now.AddHours(18), products[2], products[1]),
+                now.AddDays(2), now.AddDays(3), products[2], products[1]),
 
             MakePackage(bredaLa, "Borrel pakket (18+)", MealType.Bread, 6.50m,
-                now.AddHours(17), now.AddHours(19), products[0], products[4]), 
+                now.AddDays(2), now.AddDays(3), products[0], products[4]), 
 
             MakePackage(bredaLa, "Wijn & snack (18+)", MealType.Salad, 7.25m,
-                now.AddHours(18), now.AddHours(20), products[3], products[5]),
+                now.AddDays(2), now.AddDays(3), products[3], products[5]),
             MakePackage(bredaLd, "LD - Lunchpakket", MealType.Bread, 3.25m,
     now.AddHours(11), now.AddHours(13), products[0], products[1]),
 
 MakePackage(bredaLd, "LD - Salade", MealType.Salad, 4.10m,
-    now.AddHours(12), now.AddHours(14), products[3], products[2]),
+    now.AddDays(2), now.AddDays(4), products[3], products[2]),
 
 MakePackage(tilburgTb, "TB - Warm Meal", MealType.WarmMeal, 6.00m,
-    now.AddHours(16), now.AddHours(18), products[2], products[1]),
+    now.AddDays(2), now.AddDays(3), products[2], products[1]),
         };
 
         context.Packages.AddRange(packages);

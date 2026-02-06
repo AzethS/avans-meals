@@ -4,64 +4,100 @@
     ViewData["Title"] = "Producten beheren";
 }
 
-<h1 class="mb-3">Producten beheren</h1>
-<p class="text-muted">Package: <strong>@Model.PackageName</strong> (ID: @Model.PackageId)</p>
+<div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+    <div>
+        <a class="app-back" asp-action="Packages">← Terug naar beheer</a>
+        <h1 class="mb-1">Producten beheren</h1>
+        <div class="text-muted">
+            Package: <strong>@Model.PackageName</strong>
+        </div>
+    </div>
 
-<a class="btn btn-outline-primary mb-3"
-   asp-action="CreateProduct"
-   asp-route-packageId="@Model.PackageId">
-    + Nieuw product
-</a>
+    <a class="btn btn-outline-primary"
+       asp-action="CreateProduct"
+       asp-route-packageId="@Model.PackageId">
+        + Nieuw product
+    </a>
+</div>
 
+<div class="row g-3">
+    <!-- TOEVOEGEN -->
+    <div class="col-lg-5">
+        <div class="card p-3 h-100">
+            <h2 class="h5 fw-bold mb-3">Product toevoegen</h2>
 
-<div class="card mb-4">
-    <div class="card-body">
-        <h5 class="card-title">Product toevoegen</h5>
+            <form asp-action="AddProduct" method="post" class="d-grid gap-2">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="packageId" value="@Model.PackageId" />
 
-        <form asp-action="AddProduct" method="post" class="row g-2">
-            @Html.AntiForgeryToken()
-            <input type="hidden" name="packageId" value="@Model.PackageId" />
+                <label class="form-label mb-1">Beschikbare producten</label>
+                <select name="productId" class="form-select"
+                        asp-items="Model.AllProducts">
+                </select>
 
-            <div class="col-md-8">
-                <select name="productId" class="form-select" asp-items="Model.AllProducts"></select>
+                <button type="submit" class="btn btn-primary mt-2">
+                    Toevoegen aan package
+                </button>
+
+                <div class="text-muted small mt-2">
+                    Tip: producten met alcohol maken het pakket automatisch 18+.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- HUIDIGE PRODUCTEN -->
+    <div class="col-lg-7">
+        <div class="card p-3 h-100">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h2 class="h5 fw-bold mb-0">Huidige producten</h2>
+                <span class="badge bg-secondary">
+                    @(Model.CurrentProducts?.Count() ?? 0)
+                </span>
             </div>
 
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Toevoegen</button>
-            </div>
-        </form>
+            @if (Model.CurrentProducts == null || !Model.CurrentProducts.Any())
+            {
+                <div class="text-muted">
+                    Dit package heeft nog geen producten.
+                </div>
+            }
+            else
+            {
+                <div class="app-productlist">
+                    @foreach (var p in Model.CurrentProducts)
+                    {
+                        <div class="app-productitem">
+                            <div class="d-flex align-items-center justify-content-between gap-2">
+                                <div>
+                                    <div class="fw-semibold">@p.Name</div>
+                                    @if (p.ContainsAlcohol)
+                                    {
+                                        <span class="badge bg-warning text-dark mt-1">Alcohol</span>
+                                    }
+                                </div>
+
+                                <form asp-action="RemoveProduct" method="post" class="m-0">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="packageId" value="@Model.PackageId" />
+                                    <input type="hidden" name="productId" value="@p.Id" />
+                                    <button type="submit"
+                                            class="btn btn-sm btn-outline-danger"
+                                            onclick="return confirm('Weet je zeker dat je dit product wilt verwijderen?');">
+                                        Verwijder
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
     </div>
 </div>
 
-<h4>Huidige producten</h4>
-
-@if (Model.CurrentProducts == null || !Model.CurrentProducts.Any())
-{
-    <p class="text-muted">Dit package heeft nog geen producten.</p>
-}
-else
-{
-    <ul class="list-group mb-4">
-        @foreach (var p in Model.CurrentProducts)
-        {
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <div>
-                    <strong>@p.Name</strong>
-                    @if (p.ContainsAlcohol)
-                    {
-                        <span class="badge bg-warning text-dark ms-2">Alcohol</span>
-                    }
-                </div>
-
-                <form asp-action="RemoveProduct" method="post" class="m-0">
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" name="packageId" value="@Model.PackageId" />
-                    <input type="hidden" name="productId" value="@p.Id" />
-                    <button type="submit" class="btn btn-sm btn-outline-danger">Verwijder</button>
-                </form>
-            </li>
-        }
-    </ul>
-}
-
-<a asp-action="Packages" class="btn btn-secondary">Terug naar beheer</a>
+<div class="mt-3">
+    <a asp-action="Packages" class="btn btn-outline-secondary">
+        Terug naar beheer
+    </a>
+</div>
