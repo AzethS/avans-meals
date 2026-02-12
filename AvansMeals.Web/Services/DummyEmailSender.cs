@@ -6,7 +6,7 @@ public class DummyEmailSender : IEmailSender
 {
     public Task SendEmailAsync(string email, string subject, string htmlMessage)
     {
-        // geen echte mail versturen
+    
         return Task.CompletedTask;
     }
 }

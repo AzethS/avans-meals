@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvansMeals.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+466fd8d2e79b7ea5bfbf2cab8deb057e0b3b4e44")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1df5031400127279de1f8f9e850a56b604a7ecd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvansMeals.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvansMeals.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
